@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Title</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script>
 
     <link href="css/login.css" rel="stylesheet" id="login-css">
 </head>
@@ -15,7 +15,7 @@
 
         <!-- Icon -->
         <div class="fadeIn first">
-            <img src="images/progwards-logo-gold.png" id="icon" alt="User Icon" />
+            <img src="images/progwards-logo-bw-500x375.jpg" id="icon" alt="User Icon" />
         </div>
 
         <!-- Login Form -->
