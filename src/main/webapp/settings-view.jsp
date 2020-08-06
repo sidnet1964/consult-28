@@ -1,6 +1,5 @@
 <%@ page import="ru.progwards.java2.lib.DataBase" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Collections" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Comparator" %>
 <%@ page contentType="text/html;charset=UTF-8" %>

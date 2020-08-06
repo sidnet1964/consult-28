@@ -9,6 +9,6 @@
     <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 </head>
 <body>
-<jsp:doBody/>
+    <jsp:doBody/>
 </body>
 </html>

@@ -16,13 +16,13 @@
         <div class="form-group">
             <label>
                 Название параметра
-                <input type="text" class="fadeIn second" name="name" value="${pageContext.request.getParameter("name")}" readonly>
+                <input type="text" class="fadeIn second" name="name" value="${param.name}" readonly>
             </label>
         </div>
         <div class="form-group">
             <label>
                 Значение параметра
-                <input type="text" class="fadeIn third" name="value" value="${pageContext.request.getParameter("value")}">
+                <input type="text" class="fadeIn third" name="value" value="${param.value}">
             </label>
         </div>
 
