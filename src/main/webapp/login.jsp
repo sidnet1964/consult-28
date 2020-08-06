@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-    <link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.js"></script>
+    <title>Вход в систему</title>
+
+    <%@include file="common-head.jsp"%>
 
     <link href="css/login.css" rel="stylesheet" id="login-css">
 </head>
@@ -19,7 +18,7 @@
         </div>
 
         <!-- Login Form -->
-        <form method="post" action="show">
+        <form method="post" action="show.jsp">
             <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
             <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
             <input type="submit" class="btn btn-primary btn-lg" value="Log In">
@@ -27,12 +26,10 @@
 
         <!-- Remind Passowrd -->
         <div id="formFooter">
-            <a class="underlineHover" href="#">Forgot Password?</a>
+            <a class="underlineHover" href="#">Забыли пароль?</a>
         </div>
 
     </div>
 </div>
 </body>
 </html>
-
-
