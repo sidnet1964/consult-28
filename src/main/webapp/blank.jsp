@@ -3,7 +3,7 @@
 <head>
     <title></title>
 
-    <%@include file="common-head.jsp"%>
+    <%@include file="common-head.jspf"%>
 </head>
 <body>
 </body>

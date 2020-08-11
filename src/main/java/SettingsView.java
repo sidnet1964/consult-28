@@ -23,6 +23,7 @@ public class SettingsView extends HttpServlet {
                 return o1.name.compareTo(o2.name);
             }
         });
+
         req.setAttribute("settings", settings);
         req.getRequestDispatcher("/settings-view.jsp").forward(req, resp);
     }

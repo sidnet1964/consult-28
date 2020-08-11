@@ -1,5 +1,6 @@
 <%@tag description="Template tag for consultapp" pageEncoding="UTF-8"%>
 <%@attribute name="title" fragment="true" %>
+<!doctype html>
 <html>
 <head>
     <jsp:invoke fragment="title"/>

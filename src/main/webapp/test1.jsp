@@ -5,6 +5,6 @@
     <title>Для тестов</title>
 </head>
 <body>
-<c:out value="${schoolName}" />
+${schoolName}
 </body>
 </html>

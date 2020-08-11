@@ -7,7 +7,7 @@
 <head>
     <title>Настройки</title>
 
-    <%@include file="common-head.jsp"%>
+    <%@include file="common-head.jspf"%>
 
     <link href="css/consult-app.css" rel="stylesheet" id="consult-app-css">
 </head>

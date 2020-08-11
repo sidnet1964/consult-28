@@ -33,6 +33,6 @@ public class SettingsSave extends HttpServlet {
             req.getRequestDispatcher("/error.jsp").forward(req, resp);
             return;
         }
-        resp.sendRedirect("/settings-view.jsp");
+        resp.sendRedirect("/settings-view");
     }
 }

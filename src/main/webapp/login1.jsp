@@ -3,7 +3,7 @@
 <head>
     <title>Вход в систему</title>
 
-    <%@include file="common-head.jsp"%>
+    <%@include file="common-head.jspf"%>
 
     <link href="css/login.css" rel="stylesheet" id="login-css">
 </head>

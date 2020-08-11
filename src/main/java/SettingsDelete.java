@@ -27,6 +27,6 @@ public class SettingsDelete extends HttpServlet {
             DataBase.INSTANCE.settings.readAll();
             return;
         }
-        resp.sendRedirect("/settings-view.jsp");
+        resp.sendRedirect("/settings-view");
     }
 }

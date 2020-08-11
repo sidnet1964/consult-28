@@ -5,13 +5,11 @@
     <title>Для тестов</title>
 </head>
 <body>
-<c:set var="schoolName" scope="application" value="Progwards" />
-<c:out value="${schoolName}" />
-<c:remove var="schoolName"/>
-<c:out value="${schoolName}" />
+
 <c:if test="${5 > 1}" var="ifResult">
     Число 5 > 1
 </c:if>
+
 <c:out value="${ifResult}" />
 
 <c:set var="result" scope="session" value="${23400*2}"/>
