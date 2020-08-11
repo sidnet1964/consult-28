@@ -1,36 +1,36 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
-<html>
-<head>
-    <title>Настройки</title>
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-    <%@include file="common-head.jsp"%>
-    <link href="css/login.css" rel="stylesheet" id="login-css">
-</head>
-<body>
-<p class="h5">
-    Настройки: редактирование
-</p>
+<t:template>
+    <jsp:attribute name="title">
+        <title>Настройки</title>
+        <link href="css/login.css" rel="stylesheet" id="login-css">
+    </jsp:attribute>
+    <jsp:body>
+        <p class="h5">
+            Настройки: редактирование
+        </p>
 
-<div class="text-center">
-    <form method="post" action="settings-save">
-        <div class="form-group">
-            <label>
-                Название параметра
-                <input type="text" class="fadeIn second" name="name" value="${param.name}" readonly>
-            </label>
+        <div class="text-center">
+            <form method="post" action="settings-save">
+                <div class="form-group">
+                    <label>
+                        Название параметра
+                        <input type="text" class="fadeIn second" name="name" value="${param.name}" readonly>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Значение параметра
+                        <input type="text" class="fadeIn third" name="value" value="${param.value}">
+                    </label>
+                </div>
+
+                    <%-- Элемент для определения редактирования из SettingsSave --%>
+                <input type="text" name="edit" value="true" hidden>
+
+                <input type="submit" class="btn btn-primary" value="Сохранить">
+            </form>
         </div>
-        <div class="form-group">
-            <label>
-                Значение параметра
-                <input type="text" class="fadeIn third" name="value" value="${param.value}">
-            </label>
-        </div>
-
-        <%-- Элемент для определения редактирования из SettingsSave --%>
-        <input type="text" name="edit" value="true" hidden>
-
-        <input type="submit" class="btn btn-primary" value="Сохранить">
-    </form>
-</div>
-</body>
-</html>
+    </jsp:body>
+</t:template>
