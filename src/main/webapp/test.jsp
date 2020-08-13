@@ -6,6 +6,9 @@
 </head>
 <body>
 
+${pageContext.request.contextPath}
+<br>
+
 <c:if test="${5 > 1}" var="ifResult">
     Число 5 > 1
 </c:if>

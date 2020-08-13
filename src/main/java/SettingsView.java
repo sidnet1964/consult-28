@@ -16,13 +16,8 @@ public class SettingsView extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<DataBase.Settings.Record> settings =
-                new ArrayList<DataBase.Settings.Record>(DataBase.INSTANCE.settings.getAll());
-        settings.sort(new Comparator<DataBase.Settings.Record>() {
-            @Override
-            public int compare(DataBase.Settings.Record o1, DataBase.Settings.Record o2) {
-                return o1.name.compareTo(o2.name);
-            }
-        });
+                new ArrayList<>(DataBase.INSTANCE.settings.getAll());
+        settings.sort(Comparator.comparing(o -> o.name));
 
         req.setAttribute("settings", settings);
         req.getRequestDispatcher("/settings-view.jsp").forward(req, resp);
