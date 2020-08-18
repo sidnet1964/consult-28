@@ -6,6 +6,5 @@
         <title>Консультации Progwards</title>
     </jsp:attribute>
     <jsp:body>
-        <a href="settings-view.jsp" class="h1">Настройки</a>
     </jsp:body>
 </t:template>

@@ -16,13 +16,13 @@
                 <div class="form-group">
                     <label>
                         Название параметра
-                        <input type="text" class="fadeIn second" name="name" value="${param.name}" readonly>
+                        <input type="text" class="second" name="name" value="${param.name}" readonly>
                     </label>
                 </div>
                 <div class="form-group">
                     <label>
                         Значение параметра
-                        <input type="text" class="fadeIn third" name="value" value="${param.value}">
+                        <input type="text" class="third" name="value" value="${param.value}">
                     </label>
                 </div>
 

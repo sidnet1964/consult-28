@@ -8,11 +8,11 @@
         <link href="css/consult-app.css" rel="stylesheet" id="consult-app-css">
     </jsp:attribute>
     <jsp:body>
-        <p class="h5">
+        <p class="h1 ml-5 text-secondary">
             Настройки
         </p>
         <div class="float-right text-center">
-            <a href="settings-add.jsp"><img class="w-50" src="images/add-settings.png" alt="Добавить"></a>
+            <a href="settings-add.jsp"><img class="mb-3 w-50" src="images/add-settings.png" alt="Добавить"></a>
         </div>
         <table class="table table-striped">
             <thead>

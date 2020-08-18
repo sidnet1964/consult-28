@@ -17,7 +17,7 @@
                 </div>
 
                 <!-- Login Form -->
-                <form method="post" action="show.jsp">
+                <form method="post" action="users/user-auth">
                     <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
                     <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
                     <input type="submit" class="btn btn-primary btn-lg" value="Log In">

@@ -10,9 +10,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="error-template">
-                        <h1>Что-то пошло не так...</h1>
-                        <h2>Ошибка</h2>
-                        <div class="error-details">
+                        <div class="mb-3">
+                            <h1>Что-то пошло не так...</h1>
+                            <h2>Ошибка</h2>
+                        </div>
+                        <div class="mb-5 error-details">
                             ${pageContext.request.getAttribute("error-description")}
                         </div>
                         <div class="error-actions">
