@@ -1,6 +1,4 @@
-package examples;
-
-import com.sun.tools.javac.util.List;
+package ru.progwards.advanced.business.examples;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,4 +1,4 @@
-package examples;
+package ru.progwards.advanced.business.examples;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Optional;
 
 @WebServlet("/test-cookie1")
 public class TestCookie extends HttpServlet {

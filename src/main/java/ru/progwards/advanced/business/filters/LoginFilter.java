@@ -1,10 +1,11 @@
+package ru.progwards.advanced.business.filters;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 @WebFilter("/users/user-auth")
 public class LoginFilter implements Filter {
-    boolean isActive = false;
     @Override
     public void init(FilterConfig filterConfig) {}
 

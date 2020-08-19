@@ -1,3 +1,5 @@
+package ru.progwards.advanced.business;
+
 import ru.progwards.java2.lib.DataBase;
 
 import javax.servlet.ServletException;

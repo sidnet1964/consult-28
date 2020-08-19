@@ -26,7 +26,7 @@
                     </label>
                 </div>
 
-                    <%-- Элемент для определения редактирования из SettingsSave --%>
+                    <%-- Элемент для определения редактирования из ru.progwards.advanced.business.SettingsSave --%>
                 <input type="text" name="edit" value="true" hidden>
 
                 <input type="submit" class="btn btn-primary" value="Сохранить">

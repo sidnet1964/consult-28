@@ -4,7 +4,7 @@
 <t:template>
     <jsp:attribute name="title">
         <title>Вход в систему</title>
-        <link href="css/login.css" rel="stylesheet" id="login-css">
+        <link type='text/css' href="css/login.css" rel="stylesheet" id="login-css">
     </jsp:attribute>
     <jsp:body>
         <div class="wrapper fadeInDown">
@@ -16,7 +16,7 @@
                     <img src="images/progwards-logo-bw-500x375.jpg" id="icon" alt="User Icon" />
                 </div>
 
-                <!-- Login Form -->
+                <!-- ru.progwards.advanced.business.Login Form -->
                 <form method="post" action="users/user-auth">
                     <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
                     <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">

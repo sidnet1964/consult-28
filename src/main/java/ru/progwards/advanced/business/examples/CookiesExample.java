@@ -1,4 +1,4 @@
-package examples;
+package ru.progwards.advanced.business.examples;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
