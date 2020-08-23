@@ -32,6 +32,15 @@ public class UserAuth extends HttpServlet {
         }
 
         session.setMaxInactiveInterval(recInterval); // секунды
-        resp.sendRedirect("/");
+
+        // после успешной авторизации отправить на целевую страницу
+        String targetUrl = (String)session.getAttribute("targetUrl");
+        if (targetUrl == null)
+            targetUrl = "";
+        else {
+            // чистим атрибут
+            session.removeAttribute("targetUrl");
+        }
+        resp.sendRedirect(targetUrl);
     }
 }

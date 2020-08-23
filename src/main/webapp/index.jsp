@@ -6,5 +6,6 @@
         <title>Консультации Progwards</title>
     </jsp:attribute>
     <jsp:body>
+        <%--Здесь тело--%>
     </jsp:body>
 </t:template>

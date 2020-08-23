@@ -33,7 +33,7 @@
                             <input class='btn-edit' type='text' name='value' value='${elem.value}' hidden />
                             <input class='btn-edit' type='submit' value=''/>
                         </form>
-                        <form action='settings-delete' method='post'>
+                        <form action='settings-delete' onsubmit="return confirm('Вы уверены?');" method='post'>
                             <input class='btn-del' type='submit' name='${elem.name}' value=''/>
                         </form>
                     </td>

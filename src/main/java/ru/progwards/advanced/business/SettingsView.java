@@ -20,7 +20,6 @@ public class SettingsView extends HttpServlet {
         settings.sort(Comparator.comparing(o -> o.name));
 
         req.setAttribute("settings", settings);
-        resp.addCookie(new Cookie("Cookies1", "Time "+System.currentTimeMillis()));
         req.getRequestDispatcher("/settings-view.jsp").forward(req, resp);
     }
 }

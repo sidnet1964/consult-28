@@ -14,6 +14,7 @@ public class AuthorizedFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
         HttpSession session = ((HttpServletRequest) req).getSession();
         if (session.getAttribute("login") == null) {
+            session.setAttribute("targetUrl", ((HttpServletRequest) req).getRequestURI());
             ((HttpServletResponse)resp).sendRedirect("login");
         } else
             chain.doFilter(req, resp);
