@@ -8,11 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.List;
 
-@WebServlet("/settings/delete")
-public class SettingsDelete extends HttpServlet {
+@WebServlet("/user/delete")
+public class UserDelete extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<String> names = Collections.list(req.getParameterNames());
@@ -22,12 +21,12 @@ public class SettingsDelete extends HttpServlet {
             req.getRequestDispatcher("/error.jsp").forward(req, resp);
             return;
         }
-        if (DataBase.INSTANCE.settings.remove(names.get(0)) == null) {
+        if (DataBase.INSTANCE.users.remove(names.get(0)) == null) {
             req.setAttribute("error-description", "Не удалось удалить элемент. Вероятно, он уже не существует.");
             req.getRequestDispatcher("/error.jsp").forward(req, resp);
-            DataBase.INSTANCE.settings.readAll();
+            DataBase.INSTANCE.users.readAll();
             return;
         }
-        resp.sendRedirect("/settings/view");
+        resp.sendRedirect("user/view");
     }
 }

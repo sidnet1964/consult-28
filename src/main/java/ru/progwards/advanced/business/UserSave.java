@@ -8,18 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/settings/save")
-public class SettingsSave extends HttpServlet {
+@WebServlet("/user/save")
+public class UserSave extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String login = req.getParameter("login");
         String name = req.getParameter("name");
-        String value = req.getParameter("value");
-        if (name == null || value == null) {
+        String password = req.getParameter("password");
+        boolean isMentor = ("on".equals(req.getParameter("ismentor")));
+        if (login == null || name == null) {
             req.setAttribute("error-description", "Хакер? Отсутствуют обязательные параметры.");
             req.getRequestDispatcher("/error.jsp").forward(req, resp);
             return;
         }
-        if (name.isEmpty()) {
+        if (login.isEmpty()) {
             req.setAttribute("error-description", "Название параметра должно быть установлено.");
             req.getRequestDispatcher("/error.jsp").forward(req, resp);
             return;
@@ -27,12 +29,12 @@ public class SettingsSave extends HttpServlet {
 
         // при редактировании сперва удаляем и потом добавляем
         if ("true".equals(req.getParameter("edit")))
-            DataBase.INSTANCE.settings.remove(name);
-        if (!DataBase.INSTANCE.settings.put(new DataBase.Settings.Record(name, value))) {
+            DataBase.INSTANCE.users.remove(login);
+        if (!DataBase.INSTANCE.users.put(new DataBase.Users.User(login, password, name, isMentor, "+"))) {
             req.setAttribute("error-description", "Не удалось добавить запись. Вероятно, она уже существует.");
             req.getRequestDispatcher("/error.jsp").forward(req, resp);
             return;
         }
-        resp.sendRedirect("/settings/view");
+        resp.sendRedirect("/user/view");
     }
 }

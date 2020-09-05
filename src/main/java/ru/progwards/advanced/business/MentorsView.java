@@ -1,0 +1,27 @@
+package ru.progwards.advanced.business;
+
+import ru.progwards.java2.lib.DataBase;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+@WebServlet("/mentors")
+public class MentorsView extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<DataBase.Users.User> mentor =
+                new ArrayList<>(DataBase.INSTANCE.users.select(o -> o.is_mentor));
+        mentor.sort(Comparator.comparing(o -> o.login));
+
+        req.setAttribute("mentor", mentor);
+        req.setAttribute("mode", "view");
+        req.getRequestDispatcher("/mentor-view.jsp").forward(req, resp);
+    }
+}
