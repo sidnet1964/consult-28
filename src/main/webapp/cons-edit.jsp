@@ -17,13 +17,16 @@
                 </div>
                 <div class="form-group">
                     <label>Время начала
-                        <input type="text" class="third" name="start" value="${param.start}" readonly>
+<%--                        <input type="text" class="third" name="start" value="${param.start}" readonly>--%>
+                        <input type="datetime-local" name="startS" value="${param.startS}" disabled>
+<%--                        <input type="date" name="startD" value="${param.startD}" disabled>--%>
+<%--                        <input type="time" name="startT" value="${param.startT}" disabled>--%>
                     </label>
                 </div>
                 <div class="form-group">
                     <label>Продолжительность
 <%--                        <input type="text" class="fourth" name="duration" value="${param.duration}">--%>
-                        <input type="time" name="duration" value="${param.duration}" min="00:05" max="00:55">
+                        <input type="time" name="durationS" value="${param.durationS}" min="00:05" max="00:55">
                     </label>
                 </div>
                 <div class="form-group">

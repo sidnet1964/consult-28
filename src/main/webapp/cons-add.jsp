@@ -17,12 +17,16 @@
                 </div>
                 <div class="form-group">
                     <label>Время начала
-                        <input type="text" class="fadeIn third" name="start">
+<%--                        <input type="datetime-local" name="startD">--%>
+                        <input type="date" name="startD">
+                        <input type="time" name="startT">
+<%--                        value="18:00" min="12:00" max="22:00"--%>
                     </label>
                 </div>
                 <div class="form-group">
                     <label>Продолжительность
-                        <input type="text" class="fadeIn third" name="duration">
+<%--                        <input type="text" class="fadeIn third" name="duration">--%>
+                        <input type="time" name="durationS" value="00:15" min="00:05" max="00:45">
                     </label>
                 </div>
                 <div class="form-group">

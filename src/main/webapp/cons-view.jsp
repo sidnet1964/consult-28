@@ -2,6 +2,9 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%--https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background  --%>
+<%--https://bootstrap-4.ru/docs/4.5/layout/grid/--%>
+<%--https://bootstrap-4.ru/docs/4.5/utilities/borders/--%>
 <t:template>
     <jsp:attribute name="title">
         <title>Консультации</title>
@@ -12,45 +15,44 @@
         <div class="float-right text-center">
             <a href="/cons-add.jsp"><img class="mb-3 w-50" src="/images/add.png" alt="Добавить"></a>
         </div>
-<%--        таблица консультаций--%>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">Преподаватель</th>
-                <th scope="col">Начало</th>
-                <th scope="col">+</th>
-                <th scope="col">+</th>
-                <th scope="col">+</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:out value="${lCons}"></c:out>
-            <c:forEach var="elem" items="${lCons}">
-                <c:set var="st" value="${elem.start1}"></c:set>
-                <c:out value="st"></c:out>
-                <tr>
-                    <td>${elem.mentor}</td>
-                    <td>${elem.start}</td>
-                    <td>${elem.duration}</td>
-                    <td>${elem.student}</td>
-                    <td>
-<%--                    форма для редактирования--%>
-                        <form action='/cons-edit.jsp' method='get'>
-                            <input type='text' name='mentor' value='${elem.mentor}' hidden />
-<%--                            <input type='text' name='start' value='${elem.start1}' hidden />--%>
-<%--                            <input type='text' name='duration' value='${elem.duration1}' hidden />--%>
-                            <input type='text' name='student' value='${elem.student}' hidden />
-                            <input class='btn-edit' type='submit' value=''/>
-                        </form>
-                        <form action='/consults/delete' onsubmit="return confirm('Вы уверены?');" method='post'>
-                            <input type='text' name='mentor' value='${elem.mentor}' hidden />
-                            <input type='text' name='start' value='${elem.start}' hidden />
-                            <input class='btn-del' type='submit' name='submit' value=''/>
-                        </form>
-                    </td>
-                </tr>
+        <%--        таблица консультаций--%>
+        <div class="container">
+            <form action='/consults/select' onsubmit="return confirm('Вы уверены?');" method='post' id="select">
+            <c:forEach var="date" items="${tCons}">
+                <div class="row">
+                        <%--Центрированный элемент  https://bootstrap-4.ru/docs/4.1/utilities/spacing/  --%>
+                    <div class="col-sm-9">
+                        <div class="mx-auto" style="width: 200px;">
+                            <%--                            вывод даты консультации--%>
+                            ${date.getKey()}
+                        </div>
+                        <div class="row">
+                            <c:forEach var="elem" items="${date.getValue()}">
+                                <div class="col-4 col-sm-6 m-auto">
+                                        <span class="border text-nowrap">
+    <c:choose>
+        <c:when test="${elem.student == ''}">
+            <input type='text' name='mentor' value='${elem.mentor}' hidden />
+            <input type='text' name='start' value='${elem.start}' hidden />
+<%--            <input class='btn-del' type='submit' name='submit' value=''/>--%>
+            <button form="select" type="button" class="btn btn-primary btn-lg" name='submit' value=''>${elem.startD} ${elem.startT} ${elem.student}</button>
+        </c:when>
+        <c:otherwise>
+            <button type="button" class="btn btn-primary btn-lg" disabled>${elem.startD} ${elem.startT} ${elem.student}</button>
+        </c:otherwise>
+    </c:choose>
+                                        </span>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </div>
             </c:forEach>
-            </tbody>
-        </table>
+            <button type="button" class="btn btn-outline-secondary btn-lg btn-block" disabled>Вторичный</button>
+        </form>
+        </div>
     </jsp:body>
 </t:template>
+<%--                    <div class="col-sm">--%>
+<%--                        <span class="border text-nowrap">${elem.startD} ${elem.startT}</span>--%>
+<%--                    </div>--%>

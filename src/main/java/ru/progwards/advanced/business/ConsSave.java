@@ -7,14 +7,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
+import java.util.Date;
 
 @WebServlet("/consults/save")
 public class ConsSave extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String mentor = req.getParameter("mentor");
-        long start = Login.stringToLong(req.getParameter("start"));
-        long duration = Login.stringToLong(req.getParameter("duration"));
+        Instant instant = Instant.now();
+//        System.out.println(instant);
+//        System.out.println(instant.getEpochSecond());
+//        2020-09-05T21:24:52.029360Z //  2020-09-06T00:24    //  1599341092
+//        System.out.println(Date.parse(req.getParameter("startD")));
+        String startD = req.getParameter("startD");
+        String startT = req.getParameter("startT")+":00Z";
+        String startS = startD + "T" + startT;
+//        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
+        DateTimeFormatter dtf = DateTimeFormatter.ISO_INSTANT;
+        TemporalAccessor ta = dtf.parse(startS);
+        Instant i = Instant.from(ta);
+        long start = i.getEpochSecond();
+        long duration = Login.stringToLong(req.getParameter("durationS"));
+
         String student = req.getParameter("student");
         String comment = req.getParameter("comment");
         if (mentor == null || start == 0) {

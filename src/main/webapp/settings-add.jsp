@@ -23,21 +23,5 @@
                 <input type="submit" class="btn btn-primary" value="Добавить">
             </form>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    Одна из трёх колонок
-                    11111111111111111111
-                </div>
-                <div class="col-sm">
-                    Одна из трёх колонок
-                    22222222222222222222
-                </div>
-                <div class="col-sm">
-                    Одна из трёх колонок
-                    33333333333333333333
-                </div>
-            </div>
-        </div>
     </jsp:body>
 </t:template>
